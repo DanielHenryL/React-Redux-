@@ -2,7 +2,7 @@ import {ImageList,ImageListItem} from '@mui/material';
 
 export const ImageGallary = () => {
   return (
-    <ImageList sx={{ width: '100%', height: 500 }} cols={4} rowHeight={200}>
+    <ImageList sx={{ width: '100%', height: 500 }} cols={4} rowHeight={200} className='animate__animated animate__fadeIn animate__faster'>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img

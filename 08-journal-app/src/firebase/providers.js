@@ -61,7 +61,6 @@ export const signInWithFacebook = async() => {
 }
 
 
-
 export const registerUserWithEmailPassword = async({ email, password, displayName}) => {
     try{
         const resp = await createUserWithEmailAndPassword(FirebaseAuth, email, password)
@@ -91,7 +90,6 @@ export const loginWithEmailPassword = async({email, password}) => {
         const resp = await signInWithEmailAndPassword(FirebaseAuth, email, password)
         
         const {uid, photoURL, displayName} = resp.user
-        console.log({uid, photoURL, displayName})
         
         return{
             ok:true,
@@ -111,3 +109,7 @@ export const loginWithEmailPassword = async({email, password}) => {
         }
     }
 } 
+
+export const logoutFirebase = async() => {
+    return await FirebaseAuth.signOut();
+}

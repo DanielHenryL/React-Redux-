@@ -4,6 +4,7 @@ import { AppTheme } from "./theme"
 import { store } from "./store"
 
 export const JournalApp = () => {
+  
   return (
     <Provider store={store}>
       <AppTheme>

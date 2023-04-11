@@ -5,7 +5,8 @@ import {
   } from "react-router-dom";
 import { AuthRoutes, children } from "../auth/routes/AuthRoutes";
 import { JournalRoutes } from "../journal/routes/JournalRoutes";
-
+import { CheckingAuth } from "../ui";
+import { useCheckAuth } from "../hooks";
 
   const router = createBrowserRouter([
     {
@@ -16,22 +17,26 @@ import { JournalRoutes } from "../journal/routes/JournalRoutes";
     {
       path: "/",
       element: <JournalRoutes/>,
-      children:[
-        {
-          path: "/*",
-          element: <Navigate to={'/'}/>,
-        },
-      ]
+    },
+    {
+      path: "/*",
+      element: <Navigate to={'/auth/login'}/>,
     },
     
-    
-
   ]);
 
 
-
 export const AppRouter = () => {
+  const { status }=useCheckAuth()
+  
+
+  if(status==='checking'){
+    return <CheckingAuth/>
+  } 
+
   return (
+    
     <RouterProvider router={router} />
+    
   )
 }

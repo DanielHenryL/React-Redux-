@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom'
 import { LoginPage, RegisterPage } from '../pages'
+import { useSelector } from 'react-redux';
 
 
 export const children = [
@@ -19,9 +20,13 @@ export const children = [
 
 
 export const AuthRoutes = () => {
+    const { status } = useSelector(state => state.auth);
   return (
     <>
-        <Outlet />
+        {
+            (status ==='not-authenticated') ? <Outlet /> : <Navigate to={'/'}/>
+        }
+        
     </>
   )
 }

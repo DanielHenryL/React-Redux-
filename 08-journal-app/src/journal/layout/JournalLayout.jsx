@@ -7,7 +7,7 @@ const drawedWidth = 240;
 
 export const JournalLayout = ({ children }) => {
   return (
-    <Box sx={{ display:'flex'}}>
+    <Box sx={{ display:'flex'}} className='animate__animated animate__fadeIn animate__faster'>
         <Navbar drawedWidth={drawedWidth}/>
         <SiderBar drawedWidth={drawedWidth}/>
         
