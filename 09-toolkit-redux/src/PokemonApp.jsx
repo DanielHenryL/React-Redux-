@@ -4,7 +4,6 @@ import { getPokemons } from "./store/slices/pokemon";
 
 export const PokemonApp = () => {
   const {isLoading, pokemons, page} = useSelector(state => state.pokemons)
-  console.log(page)
   const dispatch = useDispatch();
 
   useEffect(() => {

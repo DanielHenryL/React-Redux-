@@ -15,12 +15,12 @@ export const AuthLayout = ({children, title=''}) => {
           className='box-shadow'
           xs={3}
           sx={{ 
-            width:{ md:400},
+            width:{ md:350},
             backgroundColor:'white', 
-            padding:3, 
+            padding:4, 
             borderRadius:2}}
         >
-          <Typography variant="h4" sx={{ mb:1,textAlign:'center'}}>{title}</Typography>
+          <Typography variant="h5" sx={{ mb:1,textAlign:'center'}}>{title}</Typography>
             {children}
         </Grid>
     </Grid>

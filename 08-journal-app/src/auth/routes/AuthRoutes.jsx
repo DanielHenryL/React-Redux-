@@ -21,7 +21,6 @@ export const children = [
 export const AuthRoutes = () => {
   return (
     <>
-
         <Outlet />
     </>
   )
