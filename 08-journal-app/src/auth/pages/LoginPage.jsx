@@ -8,15 +8,18 @@ import { useForm } from '../../hooks'
 import { useDispatch, useSelector } from 'react-redux'
 import { startFacebookSignIn, startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth'
 
+const formDate = {
+  email:'',
+  password:'',
+}
+
+
 export const LoginPage = () => {
   
   const { status, errorMessage } = useSelector( state => state.auth )
   const dispatch = useDispatch()
 
-  const {formState ,email, password, onInputChange } = useForm({
-    email:'',
-    password:'',
-  })
+  const {formState ,email, password, onInputChange } = useForm(formDate)
 
   const isAunthenticating = useMemo( ()=> status==='checking', [status])
 

@@ -32,9 +32,6 @@ export const Navbar = ({drawedWidth=240}) => {
                 </IconButton>
             </Grid>
         </Toolbar>
-
-
-
     </AppBar>
   )
 }
