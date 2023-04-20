@@ -1,5 +1,6 @@
 /*
  Rutas de usuario / Auth
+    /api/auth
 */
 const { Router } = require('express');
 const { check } = require('express-validator');
