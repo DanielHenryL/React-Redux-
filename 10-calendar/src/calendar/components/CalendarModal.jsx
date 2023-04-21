@@ -62,6 +62,7 @@ export const CalendarModal = () => {
 
 
     const onDateChanged = ( event, changing ) => {
+        console.log(event)
         setFormValues({
             ...formValues,
             [changing]:event
@@ -110,7 +111,7 @@ export const CalendarModal = () => {
                 <DatePicker 
                     selected={formValues.start} 
                     className="form-control"
-                    onChange={ (event => onDateChanged(event,'start')) }
+                    onChange={ (event) => onDateChanged(event,'start') }
                     dateFormat={'Pp'}
                     showTimeSelect
                     locale='es'
@@ -124,7 +125,7 @@ export const CalendarModal = () => {
                     minDate={ formValues.start}
                     selected={formValues.end} 
                     className="form-control"
-                    onChange={ (event => onDateChanged(event,'end')) }
+                    onChange={ (event) => onDateChanged(event,'end') }
                     dateFormat={'Pp'}
                     showTimeSelect  
                     locale='es'
