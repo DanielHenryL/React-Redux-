@@ -8,6 +8,7 @@ export const FabAddNew = () => {
 
   
   const handleClickNew = () => {
+    openDateModal();
     setActiveEvent({
       title:'',
       notes:'',
@@ -18,8 +19,8 @@ export const FabAddNew = () => {
         _id:'123',
         name:'Daniel Lagunas',
       }
-    })
-    openDateModal()
+    });
+    
   }
 
   return (
